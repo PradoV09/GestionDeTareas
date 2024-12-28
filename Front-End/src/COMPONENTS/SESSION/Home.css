@@ -1,0 +1,25 @@
+.home-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  padding: 20px;
+}
+
+.home-container h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.home-container p {
+  color: #7f8c8d;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.session-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+}

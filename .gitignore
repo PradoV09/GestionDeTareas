@@ -1,0 +1,22 @@
+# Ignorar node_modules en ambas carpetas
+Back-End/node_modules/
+Front-End/node_modules/
+node_modules/
+
+# Ignorar build/ o dist/ si existen
+Back-End/dist/
+Front-End/build/
+
+# Ignorar archivos de logs
+*.log
+npm-debug.log*
+
+# Ignorar configuraciones de editores y sistemas
+.vscode/
+.idea/
+.DS_Store
+
+# Ignorar archivos de entorno
+Back-End/.env
+Front-End/.env
+.env
