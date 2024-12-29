@@ -12,14 +12,11 @@ const port = process.env.PORT;
 //cors
 app.use(cors({ origin: "http://localhost:5173" }));
 
-// Middleware para analizar JSON
+
+// Configurar express para manejar JSON en los request y response
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("jumm");
-});
-
-// Usar la ruta CreateUsers
+// Usar las rutas
 app.use("/api", CreateUsers);
 app.use("/api", Login);
 
