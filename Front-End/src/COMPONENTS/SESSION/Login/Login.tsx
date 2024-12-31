@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./Login.css";
 
 export const Login = (): JSX.Element => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ export const Login = (): JSX.Element => {
       if (response.ok) {
         alert("Inicio de sesión exitoso");
         console.log("Inicio de sesión exitoso:", result);
+        navigate("/CreateTask");
       } else {
         alert("Error al iniciar sesión: " + result.message);
         console.error("Error al iniciar sesión:", result);

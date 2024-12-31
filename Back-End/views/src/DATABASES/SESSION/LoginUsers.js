@@ -1,5 +1,5 @@
 import express from 'express';
-import connection from "file:///C:/Users/HP/Downloads/Nueva%20carpeta/Back-End/views/src/DATABASES/ConnectionToTheDatabase.js"; // Ajusta la ruta según la estructura de tu proyecto
+import connection from "../ConnectionToTheDatabase.js"; // Ajusta la ruta según la estructura de tu proyecto
 const router = express.Router();
 
 // POST /Login
