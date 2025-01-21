@@ -1,46 +1,44 @@
-import React, { useState } from 'react';
-import "./CreateAccount.css";
+import React, { useState } from "react";
 
 export const CreateAccount = (): JSX.Element => {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const data = {
       email,
       name: username,
-      password
+      password,
     };
-  
-    console.log('Datos enviados:', data); // Añadir esta línea para depuración
-  
+
+    console.log("Datos enviados:", data); // Añadir esta línea para depuración
+
     try {
-      const response = await fetch('http://localhost:5174/api/CreateUsers', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5178/api/CreateUsers", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
-        alert('Cuenta creada con éxito');
-        console.log('Cuenta creada con éxito:', result);
+        alert("Cuenta creada con éxito");
+        console.log("Cuenta creada con éxito:", result);
       } else {
-        alert('Error al crear cuenta: ' + result.message);
-        console.error('Error al crear cuenta:', result);
+        alert("Error al crear cuenta: " + result.message);
+        console.error("Error al crear cuenta:", result);
       }
     } catch (error) {
-      alert('Error al crear cuenta');
-      console.error('Error al crear cuenta:', error);
+      alert("Error al crear cuenta");
+      console.error("Error al crear cuenta:", error);
     }
   };
-  
 
   return (
     <div>

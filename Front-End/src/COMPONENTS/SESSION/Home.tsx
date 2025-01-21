@@ -1,6 +1,5 @@
 import { CreateAccount } from "./CreateAccount/CreateAccount.tsx";
 import { Login } from "./Login/Login.tsx";
-import './Home.css'; 
 
 export const Home = (): JSX.Element => {
   return (

@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import connection from "../ConnectionToTheDatabase.js"; // Ajusta la ruta según la estructura de tu proyecto
 const router = express.Router();
 
@@ -7,7 +7,11 @@ router.post("/Login", (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).json({ message: "El correo electrónico y la contraseña son obligatorios" });
+    return res
+      .status(400)
+      .json({
+        message: "El correo electrónico y la contraseña son obligatorios",
+      });
   }
 
   const query = `SELECT * FROM users WHERE email = ? AND password = ?`;
@@ -21,7 +25,9 @@ router.post("/Login", (req, res) => {
       console.log("Inicio de sesión exitoso:", results);
       return res.status(200).json({ message: "Inicio de sesión exitoso" });
     } else {
-      return res.status(401).json({ message: "Correo electrónico o contraseña incorrectos" });
+      return res
+        .status(401)
+        .json({ message: "Correo electrónico o contraseña incorrectos" });
     }
   });
 });
