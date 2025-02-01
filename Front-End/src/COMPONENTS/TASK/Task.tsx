@@ -79,6 +79,7 @@ export const Task: React.FC = () => {
           </div>
           <button type="submit">Crear Tarea</button>
         </form>
+        
         <TaskList refresh={refresh} onRefreshComplete={handleRefreshComplete} />
       </div>
     </div>

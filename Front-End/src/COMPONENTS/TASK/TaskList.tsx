@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { EditTask } from "./EdietTask";
 import { DeleteTask } from "./DeleteTask";
+import { SharedTask } from "./SharedTask"; // Importa el componente SharedTask
 
 interface Task {
   id: number;
@@ -69,6 +70,8 @@ export const TaskList: React.FC = () => {
                     taskId={task.id}
                     onTaskDeleted={handleTaskDeleted}
                   />
+                  {/* Botón para compartir tarea */}
+                  <SharedTask taskId={task.id} />
                 </div>
               )}
             </li>

@@ -7,6 +7,9 @@ import CreateTask from "./views/src/DATABASES/TASK/CreateTask.js"; // Crear tare
 import EditTask from "./views/src/DATABASES/TASK/EditTask.js"; // Editar tareas
 import DeleteTask from "./views/src/DATABASES/TASK/DeleteTask.js"; // Editar tareas
 import TaskView from "./views/src/DATABASES/TASK/TaskView.js"; // Ver tareas
+import SharedTask from "./views/src/DATABASES/TASK/SharedTask.js"; // Compartir tareas
+import userRoutes from "./views/src/DATABASES/userRoutes.js"; // Rutas de usuarios
+
 
 // Configuración del entorno de desarrollo
 dotenv.config();
@@ -36,9 +39,17 @@ app.use("/api", EditTask);
 // Eliminar tareas
 app.use("/api", DeleteTask);
 
+// Compartir tareas
+app.use("/api", SharedTask);
+
+// Rutas de usuarios
+app.use("/api", userRoutes);
+
 // Ver tareas 
 app.use("/api", TaskView);
 
+
+// Iniciando el server
 app.listen(port, () => {
   console.log(`El servidor está funcionando en: http://localhost:${port}`);
 });
